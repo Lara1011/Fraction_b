@@ -30,70 +30,70 @@ TEST_CASE("Fraction addition test") {
     Fraction a(1, 2), b(1, 4);
     Fraction c = a + b; // 1/2 + 1/4 = 3/4
     CHECK(((c.getNumerator() == 3) && (c.getDenominator() == 4)));
-    //CHECK(__gcd(c.getNumerator(), c.getDenominator()) == 1); // Reduced as possible
+    CHECK(__gcd(c.getNumerator(), c.getDenominator()) == 1); // Reduced as possible
 
 
     Fraction d(1, 5);
     float e = 0.4; // Will be converted to 2/5
     Fraction f = d + e; // 1/5 + 2/5 = 3/5
     CHECK(((f.getNumerator() == 3) && (f.getDenominator() == 5)));
-    //CHECK(__gcd(f.getNumerator(), f.getDenominator()) == 1);
+    CHECK(__gcd(f.getNumerator(), f.getDenominator()) == 1);
 
 
     Fraction g = e + d;
     CHECK(((g.getNumerator() == 3) && (g.getDenominator() == 5)));
-    //CHECK(__gcd(g.getNumerator(), g.getDenominator()) == 1);
+    CHECK(__gcd(g.getNumerator(), g.getDenominator()) == 1);
 }
 
 TEST_CASE("Fraction subtraction test") {
     Fraction a(1, 2), b(1, 4);
     Fraction c = a - b;
     CHECK(((c.getNumerator() == 1) && (c.getDenominator() == 4)));
-    //CHECK(__gcd(c.getNumerator(), c.getDenominator()) == 1);
+    CHECK(__gcd(c.getNumerator(), c.getDenominator()) == 1);
 
     Fraction d(4, 5);
     float e = 0.4;
     Fraction f = d - e; // 4/5 - 2/5 = 2/5
     CHECK(((f.getNumerator() == 2) && (f.getDenominator() == 5)));
-    //CHECK(__gcd(f.getNumerator(), f.getDenominator()) == 1);
+    CHECK(__gcd(f.getNumerator(), f.getDenominator()) == 1);
 
     Fraction g = e - d; // 2/5 - 4/5 = -2/5
     CHECK(((g.getNumerator() == -2) && (g.getDenominator() == 5)));
-    //CHECK(__gcd(g.getNumerator(), g.getDenominator()) == 1);
+    CHECK(__gcd(g.getNumerator(), g.getDenominator()) == 1);
 }
 
 TEST_CASE("Fraction multiplication test") {
     Fraction a(1, 2), b(1, 4);
     Fraction c = a * b;
     CHECK(((c.getNumerator() == 1) && (c.getDenominator() == 8)));
-    //CHECK(__gcd(c.getNumerator(), c.getDenominator()) == 1);
+    CHECK(__gcd(c.getNumerator(), c.getDenominator()) == 1);
 
     Fraction d(4, 5);
     float e = 0.4;
     Fraction f = d * e; // 4/5 * 2/5 = 8/25
     CHECK(((f.getNumerator() == 8) && (f.getDenominator() == 25)));
-    //CHECK(__gcd(f.getNumerator(), f.getDenominator()) == 1);
+    CHECK(__gcd(f.getNumerator(), f.getDenominator()) == 1);
 
     Fraction g = e * d; // 2/5 * 4/5 = 8/25
     CHECK(((g.getNumerator() == 8) && (g.getDenominator() == 25)));
-    //CHECK(__gcd(g.getNumerator(), g.getDenominator()) == 1);
+    CHECK(__gcd(g.getNumerator(), g.getDenominator()) == 1);
 }
 
 TEST_CASE("Fraction division test") {
     Fraction a(1, 2), b(1, 4);
     Fraction c = a / b; // 1/2 / 1/4 = 1/2 * 4/1 = 4/2 = 2/1
     CHECK(((c.getNumerator() == 2) && (c.getDenominator() == 1)));
-    //CHECK(__gcd(c.getNumerator(), c.getDenominator()) == 1);
+    CHECK(__gcd(c.getNumerator(), c.getDenominator()) == 1);
 
     Fraction d(4, 5);
     float e = 0.4;
     Fraction f = d / e; // 4/5 / 2/5 = 4/5 * 5/2 = 20 / 10 = 2/1
     CHECK(((f.getNumerator() == 2) && (f.getDenominator() == 1)));
-    //CHECK(__gcd(f.getNumerator(), f.getDenominator()) == 1);
+    CHECK(__gcd(f.getNumerator(), f.getDenominator()) == 1);
 
     Fraction g = e / d; // 2/5 / 4/5 = 2/5 * 5/4 = 10 / 20 = 1/2
     CHECK(((g.getNumerator() == 1) && (g.getDenominator() == 2)));
-    //CHECK(__gcd(g.getNumerator(), g.getDenominator()) == 1);
+    CHECK(__gcd(g.getNumerator(), g.getDenominator()) == 1);
 }
 
 TEST_CASE("Division by zero throws an exception") {
