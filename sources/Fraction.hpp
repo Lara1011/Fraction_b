@@ -16,7 +16,7 @@ namespace ariel {
     private:
         int numerator;
         int denominator;
-        const int __gcd(int first, int second);
+        const int gcd(int first, int second);
         void reduce();
     public:
         Fraction();

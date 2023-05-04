@@ -29,12 +29,12 @@ namespace ariel {
         reduce();
     }
 
-    const int Fraction::__gcd(int first, int second) {
-        return second == 0 ? first : __gcd(second, first % second);
+    const int Fraction::gcd(int first, int second) {
+        return second == 0 ? first : gcd(second, first % second);
     }
 
     void Fraction::reduce() {
-        int gcd = abs(Fraction::__gcd(numerator, denominator));
+        int gcd = abs(Fraction::gcd(numerator, denominator));
         numerator /= gcd;
         denominator /= gcd;
     }
